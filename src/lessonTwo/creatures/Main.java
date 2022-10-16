@@ -7,14 +7,14 @@ public class Main {
 
         Creature eagle = new Creature();
         eagle.setName("Eagle");
-        eagle.isFly = true;
-        eagle.isBipedal = true;
-        eagle.armNumber = 3;
-        eagle.legNumber = 5;
-        eagle.wingNumber = 1;
-        eagle.weight = 100500.00;
-        eagle.height = 1000.00;
-        eagle.color = Color.BLACK_WHITE;
+        eagle.setFly(true);
+        eagle.setBipedal(true);
+        eagle.setArmNumber(3);
+        eagle.setLegNumber(5);
+        eagle.setWingNumber(7);
+        eagle.setWeight(100500.00);
+        eagle.setHeight(1000.00);
+        eagle.setColor(Color.BLACK_WHITE);
         System.out.println(eagle);
     }
 }

@@ -4,16 +4,16 @@ package lessonTwo.creatures;
 public class Creature {
     // Variables
     private String name;
-    public Boolean isBipedal;
-    public Boolean isTail;
-    public Boolean isFly;
-    public Integer legNumber;
-    public Integer armNumber;
-    public Integer wingNumber;
-    public Double weight;
-    public Double height;
+    private Boolean isBipedal;
+    private Boolean isTail;
+    private Boolean isFly;
+    private Integer legNumber;
+    private Integer armNumber;
+    private Integer wingNumber;
+    private Double weight;
+    private Double height;
 
-    public Color color;
+    private Color color;
 
     // Constructors
     public Creature(){
@@ -50,7 +50,7 @@ public class Creature {
     }
 
     public void setTail(Boolean tail) {
-        isTail = tail;
+        this.isTail = tail;
     }
 
     public Boolean getFly() {
@@ -58,27 +58,29 @@ public class Creature {
     }
 
     public void setFly(Boolean fly) {
-        if(!isBipedal) {
-            isFly = null;
-        } else isFly = fly;
+        isFly = fly;
     }
 
     public Integer getLegNumber() {
-        if(isBipedal)
-            return 4;
-        else return 2;
+        return legNumber;
+    }
+
+    public void setLegNumber(Integer legNumber) {
+        this.legNumber = legNumber;
     }
 
     public Integer getArmNumber() {
-        if((isBipedal == true)|| ((isBipedal == true) && (isFly== true)))
-            return 0;
-        else return 2;
+        return  armNumber;
+    }
+    public void setArmNumber(Integer armNumber){
+        this.armNumber = armNumber;
     }
 
     public Integer getWingNumber() {
-        if(!isFly)
-            return null;
-        else return 2;
+        return wingNumber;
+    }
+    public void setWingNumber(Integer wingNumber){
+        this.wingNumber = wingNumber;
     }
 
     public Double getWeight() {
