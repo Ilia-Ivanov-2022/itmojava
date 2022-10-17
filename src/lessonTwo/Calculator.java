@@ -16,14 +16,14 @@ public class Calculator {
     public static double divInt(int a, int b) {
         double c = 0;
         if (b != 0) {
-            c = a / b;
+            c = (double)a / (double)b;
         }
         return c;
     }
     public static double divLong(long a, long b){
         double c = 0;
         try{
-            c = a / b;
+            c = (double) a /(double) b;
         }
         catch(ArithmeticException e){
             System.out.println("Division by zero!");
