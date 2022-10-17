@@ -13,15 +13,15 @@ public class Calculator {
         return a + b;
     }
 //  Division
-    public static int divInt(int a, int b) {
-        int c = 0;
+    public static double divInt(int a, int b) {
+        double c = 0;
         if (b != 0) {
             c = a / b;
         }
         return c;
     }
-    public static long divLong(long a, long b){
-        long c = 0;
+    public static double divLong(long a, long b){
+        double c = 0;
         try{
             c = a / b;
         }
