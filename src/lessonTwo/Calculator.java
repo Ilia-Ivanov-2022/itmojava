@@ -2,10 +2,7 @@ package lessonTwo;
 
 
 public class Calculator {
-    private Calculator(){
-        throw new IllegalStateException("Utility class");
-    }
-//    Sum
+    //    Sum
     public static int sumInt(int a, int b){
         return a + b;
     }
@@ -29,7 +26,7 @@ public class Calculator {
             c = a / b;
         }
         catch(ArithmeticException e){
-            System.out.println("Division by zero! Enter new numbers:");
+            System.out.println("Division by zero!");
         }
         return c;
     }
