@@ -7,11 +7,11 @@ public class Main {
 
         Creature eagle = new Creature();
         eagle.setName("Eagle");
-        eagle.setFly(true);
-        eagle.setBipedal(true);
-        eagle.setArmNumber(3);
+        eagle.setIsAirborn(true);
+        eagle.setIsOrthograde(false);
+        eagle.setArmNumber();
         eagle.setLegNumber(5);
-        eagle.setWingNumber(7);
+        eagle.setWingNumber();
         eagle.setWeight(100500.00);
         eagle.setHeight(1000.00);
         eagle.setColor(Color.BLACK_WHITE);

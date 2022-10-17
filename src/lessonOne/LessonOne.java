@@ -5,18 +5,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class lessonOne {
-    public static void main(String[] args) {
+public class LessonOne {
+    public static void main(String[] args) throws IOException {
         // Exercise 1.
-        System.out.println("Я \nхорошо \nзнаю \nJava.");
+        System.out.println("Я ");
+        System.out.println("хорошо");
+        System.out.println("знаю");
+        System.out.println("Java.");
 
         // Exercise 2.
-        System.out.println(( 46 + 10 ) * ( 10 / 3 ));
+        System.out.println(( 46 + 10 ) * ( 10 / 3.0 ));
         System.out.println(( 29 ) * ( 4 ) * (- 15 ));
 
         // Exercise 3.
         int number = 10500;
-        int result3 = (number/10)/10;
+        double result3 = (number/10d)/10;
         System.out.println(result3);
 
         // Exercise 4.
@@ -29,14 +32,19 @@ public class lessonOne {
 
         // Exercise 5.
         Scanner scanner5 = new Scanner(System.in);
-        int[] arr = new int[3];
+
         // Input.
-        for(int i = 0; i < arr.length; i++){
-            System.out.print("Please, enter a number: ");
-            arr[i] = scanner5.nextInt();
-        }
+        System.out.print("Please, enter a number: ");
+        Integer int1 = scanner5.nextInt();
+        System.out.print("Please, enter another number: ");
+        Integer int2 = scanner5.nextInt();
+        System.out.print("Please, enter last number: ");
+        Integer int3 = scanner5.nextInt();
+        scanner5.close();
         // Output.
-        for (int i : arr) System.out.println(i);
+        System.out.println(int1);
+        System.out.println(int2);
+        System.out.println(int3);
 
 //        Exercise 6.
 //        Scanner
@@ -52,12 +60,7 @@ public class lessonOne {
 //        Buffered Reader
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter an integer:");
-        String br;
-        try {
-            br = reader.readLine();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        String br = reader.readLine();
 
         if (Integer.parseInt(br) % 2 != 0) {
             System.out.println("Odd");
