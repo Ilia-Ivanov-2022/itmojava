@@ -1,4 +1,4 @@
-package lessonTwo.creatures;
+package lesson2.creatures;
 
 public enum Color {
 

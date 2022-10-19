@@ -1,12 +1,14 @@
-package lessonTwo.creatures;
+package lesson2.creatures;
 
 
 public class Creature {
     // Variables
     private String name;
-    private Boolean isBipedal;
-    private Boolean isTail;
-    private Boolean isFly;
+    private Boolean isOrthograde;
+    private Boolean hasTail;
+    private Boolean isWaterborn;
+    private Boolean isAirborn;
+    private Boolean isUnderground;
     private Integer legNumber;
     private Integer armNumber;
     private Integer wingNumber;
@@ -22,11 +24,11 @@ public class Creature {
         this.name = name;
         this.color = color;
     }
-    public Creature(String name, Boolean isBipedal, Boolean isFly, Boolean isTail){
+    public Creature(String name, Boolean isOrthograde, Boolean isAirborn, Boolean hasTail){
         this.name = name;
-        this.isBipedal = isBipedal;
-        this.isFly = isFly;
-        this.isTail = isTail;
+        this.isOrthograde = isOrthograde;
+        this.isAirborn = isAirborn;
+        this.hasTail = hasTail;
     }
     // Properties
     public String getName() {
@@ -37,28 +39,28 @@ public class Creature {
         this.name = name;
     }
 
-    public Boolean getBipedal() {
-        return isBipedal;
+    public Boolean getIsOrthograde() {
+        return isOrthograde;
     }
 
-    public void setBipedal(Boolean bipedal) {
-        isBipedal = bipedal;
+    public void setIsOrthograde(Boolean orthograde) {
+        isOrthograde = orthograde;
     }
 
-    public Boolean getTail() {
-        return isTail;
+    public Boolean getHasTail() {
+        return hasTail;
     }
 
-    public void setTail(Boolean tail) {
-        this.isTail = tail;
+    public void setHasTail(Boolean tail) {
+        this.hasTail = tail;
     }
 
-    public Boolean getFly() {
-        return isFly;
+    public Boolean getIsAirborn() {
+        return isAirborn;
     }
 
-    public void setFly(Boolean fly) {
-        isFly = fly;
+    public void setIsAirborn(Boolean fly) {
+        isAirborn = fly;
     }
 
     public Integer getLegNumber() {
@@ -72,15 +74,20 @@ public class Creature {
     public Integer getArmNumber() {
         return  armNumber;
     }
-    public void setArmNumber(Integer armNumber){
-        this.armNumber = armNumber;
+    public void setArmNumber(){
+        Integer arms = 0;
+        if(isOrthograde) arms = 2;
+        this.armNumber = arms;
     }
 
     public Integer getWingNumber() {
         return wingNumber;
     }
-    public void setWingNumber(Integer wingNumber){
-        this.wingNumber = wingNumber;
+    public void setWingNumber(){
+        Integer wings = 0;
+        if(isAirborn)
+            wings = 2;
+        this.wingNumber = wings;
     }
 
     public Double getWeight() {
@@ -111,9 +118,9 @@ public class Creature {
     public String toString() {
         return "Creature{" +
                 "name='" + name + '\'' +
-                ", isBipedal=" + isBipedal +
-                ", isTail=" + isTail +
-                ", isFly=" + isFly +
+                ", isOrthograde=" + isOrthograde +
+                ", hasTail=" + hasTail +
+                ", isAirborn=" + isAirborn +
                 ", legNumber=" + legNumber +
                 ", armNumber=" + armNumber +
                 ", wingNumber=" + wingNumber +
