@@ -7,11 +7,9 @@ class Study {
     public void setCourse(String course) {
         this.course = course;
     }
-
-    public String printCourse() {
-        return this.course;
+    public void printCourse() {
+        System.out.println(course);
     }
-
 }
 
 class JavaProgram {
@@ -19,7 +17,8 @@ class JavaProgram {
 
         Study study = new Study();  // New instance of Class Study.
         study.setCourse("Изучение Java - это просто!"); // Set value.
-        System.out.println(study.printCourse()); // Output value.
+        study.printCourse(); // Output value.
     }
 }
+
 
