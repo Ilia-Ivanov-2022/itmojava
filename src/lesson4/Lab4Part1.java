@@ -82,6 +82,7 @@ public class Lab4Part1 {
 
         // Exercise 6.
         System.out.println("==== Exercise 6 ====");
+        // Using array from exercise 5.
         for(int[] a : arr){
             System.out.println(check1and3InArray(a));
         }
@@ -109,6 +110,12 @@ public class Lab4Part1 {
     }
     // Method for Exercise 6.
     private static boolean check1and3InArray(int[] args){
-        return Arrays.stream(args).anyMatch(i -> (i == 1) || (i == 3));
+        //return Arrays.stream(args).anyMatch(i -> (i == 1) || (i == 3));
+        for(int i : args){
+            if((i == 1) || (i == 3)){
+                return true;
+            }
+        }
+        return false;
     }
 }
