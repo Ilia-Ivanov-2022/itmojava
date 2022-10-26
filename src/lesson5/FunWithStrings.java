@@ -3,13 +3,13 @@ package lesson5;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class FunWithStrings {
     // METHODS FOR ABOVE EXERCISES.
     // Exercise 1. The longest word.
     protected void longestWord(String str){
-        str = str.replaceAll("[,.]", "");
+        String pattern = "([\\.,])";
+        str = str.replaceAll(pattern, "");
         String[] strings = str.split(" ");
 
         int wordLength = 0;
@@ -24,34 +24,16 @@ public class FunWithStrings {
     }
 
     // Exercise 2. Palindrome.
-    protected void palindrome(){
-        String wordToCheck = scan("Enter a word to check for palindrome: ");
-
-        if(wordToCheck.contains(" ")){
-            System.out.println("Enter a single word.");
-            palindrome();
-        }
-        char[] wtc = wordToCheck.toCharArray();
-        char[] pal = new char[wordToCheck.length()];
-        for(int i = 0; i < wtc.length; i++){
-            pal[(pal.length - 1) - i] = wtc[i];
-        }
-        if(wordToCheck.equals(pal)){
-            System.out.println("The word " + wordToCheck + " is a palindrome.");
-        }else {
-            System.out.println("The word " + wordToCheck + " is not a palindrome.");
-        }
-    }
     protected void palindromeSB() {
 
         String wordToCheck = scan("Enter a word to check for palindrome: ");
 
         if (wordToCheck.contains(" ")) {
             System.out.println("Enter a single word.");
-            palindrome();
+            palindromeSB();
         }
         StringBuilder sb = new StringBuilder(wordToCheck);
-        if (wordToCheck.equals(sb.reverse().toString())) {
+        if (wordToCheck.equalsIgnoreCase(sb.reverse().toString())) {
             System.out.println("The word " + wordToCheck + " is a palindrome.");
         } else {
             System.out.println("The word " + wordToCheck + " is not a palindrome.");
@@ -59,14 +41,12 @@ public class FunWithStrings {
     }
 
     // Exercise 3. Бяка.
-    protected void bjaka(){
-        String bka = scan("Введите предложение избегая слово 'Бяка': ");
-        bka = bka.toLowerCase();
-        if(bka.contains("бяка")){
-            //System.out.println(bka);
-            bka = bka.replace("бяка", "[вырезано цензурой]");
+    protected void bjaka(String check, String search, String replace){
+        check = check.toLowerCase();
+        if(check.contains(search)){
+            check = check.replace(search, replace);
         }
-        System.out.println(bka);
+        System.out.println(check);
     }
 
     // Exercise 4. A substring in a string.
@@ -100,7 +80,7 @@ public class FunWithStrings {
     }
 
     // Service methods for all exercises.
-    private String scan(String str){
+    protected String scan(String str){
         Scanner scanner = new Scanner(System.in);
         System.out.print(str);
         return scanner.nextLine();
