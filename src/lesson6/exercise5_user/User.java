@@ -13,6 +13,10 @@ public class User {
         this.userAge = age;
     }
 
+    public void printUserInfo(int userAge){
+        System.out.println("User age: " + userAge);
+    }
+
     public void setUserAge() {
         this.userAge = ageScanner();
     }
@@ -20,6 +24,8 @@ public class User {
     public int getUserAge() {
         return userAge;
     }
+
+
     public int ageScanner(){
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter user age: ");

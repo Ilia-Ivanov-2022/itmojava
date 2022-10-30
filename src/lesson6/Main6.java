@@ -40,6 +40,7 @@ public class Main6 {
         System.out.println("===== Another Parent/ Child =====");
         UserExtended userExt = new UserExtended();
         userExt.setUserExtended();
-        userExt.printUser(userExt.nameScanner());
+        userExt.printUserInfo(userExt.getUserAge());
+        userExt.printUserInfo(userExt.getUserName());
     }
 }

@@ -18,9 +18,8 @@ public class UserExtended extends User {
         return userName;
     }
 
-    public void printUser(String name){
+    public void printUserInfo(String name){
         System.out.println("User name: " + getUserName());
-        System.out.println("User age: " + getUserAge());
     }
 
 }
