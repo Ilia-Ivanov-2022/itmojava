@@ -23,7 +23,7 @@ public class Main3 {
         House house1 = new House();
         House house2 = new House();
         // Set house.
-        house1.setHouse("MyHouse", 2, 2015);
+        house1.setHouse("MyHouse", 2, 2023);
         house2.setHouse("Another House", 7, 1327);
         // Output.
         house1.printHouse(house1);

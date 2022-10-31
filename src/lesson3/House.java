@@ -4,29 +4,33 @@ import java.util.Calendar;
 
 public class House {
 
-    public String houseName;
-    public int floorNumber;
-    public int yearBuilt;
+    protected String houseName;
+    protected int floorNumber;
+    protected int yearBuilt;
 
     // Method setting house values.
-    public void setHouse(String name, int floorNum, int yearBlt){
+    protected void setHouse(String name, int floorNum, int yearBlt){
         this.houseName = name;
         this.floorNumber = floorNum;
-        this.yearBuilt = yearBlt;
+        if((yearBlt > -8000) && (yearBlt < Calendar.getInstance().get(Calendar.YEAR))) {
+            this.yearBuilt = yearBlt;
+        }else{
+            while((yearBlt < -8000) && (yearBlt > Calendar.getInstance().get(Calendar.YEAR))){
+                System.out.println("Wrong house built year. Please enter a correct one.");
+                setHouse(name, floorNum, yearBlt);
+            }
+        }
     }
     // Output method.
-    public void printHouse(House house){
+    protected void printHouse(House house){
         if(house != null){
             System.out.println("The house info: " + house.houseName + ", "
                     + house.floorNumber + ", " + house.yearBuilt);
         }
     }
     // House age method.
-    public void houseAge(String houseName, int yearBlt){
-        int crntYear = Calendar.getInstance().get(Calendar.YEAR);
-        if(yearBlt > -8000 && yearBlt < crntYear){
-            System.out.println(houseName + " house age: " + (crntYear - yearBlt));
-        }
-        else System.out.println("Wrong house building year");
+    void houseAge(String houseName, int yearBlt){
+        System.out.println(houseName + " house age: " +
+                (Calendar.getInstance().get(Calendar.YEAR) - yearBlt));
     }
 }
