@@ -8,36 +8,28 @@ import java.util.Map;
 
 public class GameScore {
 
-    Map<String, Integer> playerGameScore = new HashMap<>();
+    Map<User, Integer> playerGameMap = new HashMap<>();
 
-    public GameScore(){}
-
-    public GameScore(Map<String, Integer> gameScore) {
-        this.playerGameScore = gameScore;
+    public void setGamePlayer(User user, Integer score) {
+        playerGameMap.put(user, score);
+        System.out.println("New user " + user.getName() + " with score " + playerGameMap.get(user) + " has been added.");
     }
 
-    public Map<String, Integer> getGameScore() {
-        return playerGameScore;
-    }
-
-    public void setGameScore(Map<String, Integer> gameScore) {
-        this.playerGameScore = gameScore;
-    }
-
-
-    public void setGameScore(String name, Integer score) {
-        User newUser = new User(name);
-        newUser.setName(name);
-        playerGameScore.put(name, score);
-        System.out.println(playerGameScore.toString());
-    }
-
-    public String userScore(){
+    public void printUserScore(Map<User, Integer> map){
         String name = stringReader();
-        if(!playerGameScore.containsKey(name)){
-            System.out.println("Player with this name don't exist in the records. Try again.");
+        Integer result = null;
+        for(Map.Entry<User, Integer> entry: map.entrySet()){
+            if(name.equalsIgnoreCase(entry.getKey().getName())){
+                result = entry.getValue();
+            }
         }
-        return (name + " score is " + playerGameScore.get(name));
+        System.out.print(name + " score is " + result);
+    }
+    public void printAllPlayers(){
+        System.out.println("===== Players Table =====");
+        for (Map.Entry<User, Integer> entry : playerGameMap.entrySet()) {
+            System.out.println(entry.getKey().getName() + ": " + playerGameMap.get(entry.getKey()));
+        }
     }
 
     // Service methods.

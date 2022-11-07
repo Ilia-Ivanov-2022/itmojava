@@ -35,28 +35,29 @@ public class Main9 {
         List<Integer> randomArrayList = new ArrayList<>();
         List<Integer> randomLinkedList = new LinkedList<>();
 
-
         // Fill the lists with random elements.
         fwc.fillList(randomArrayList);
         System.out.println("ArrayList size: " + randomArrayList.size());
         fwc.fillList(randomLinkedList);
         System.out.println("LinkedList size: " + randomLinkedList.size());
 
-        //
+
         fwc.pickRandomValues(randomArrayList);
-        //fwc.pickRandomValues(randomLinkedList);
+        fwc.pickRandomValues(randomLinkedList);
 
         // Exercise 3.
         System.out.println("===== Exercise 3 =====");
+        User user = new User();
         GameScore gs = new GameScore();
-        gs.playerGameScore.put("Marvin", 1254);
-        gs.playerGameScore.put("Helene", 3571);
-        gs.playerGameScore.put("Irvin", 2576);
-        gs.playerGameScore.put("Jessy", 9543);
-        gs.playerGameScore.put("Kevin", 7536);
+        gs.setGamePlayer(user.setUser("Edgar"), 1254);
+        gs.setGamePlayer(user.setUser("David"), 5486);
+        gs.setGamePlayer(user.setUser("Cindy"), 2435);
+        gs.setGamePlayer(user.setUser("Andrew"), 7546);
+        gs.setGamePlayer(user.setUser("Bob"), 9568);
+        gs.setGamePlayer(user.setUser("Fiona"), 4258);
 
 
-        System.out.println(gs.playerGameScore.toString());
-        System.out.println(gs.userScore());
+        gs.printAllPlayers();
+        gs.printUserScore(gs.playerGameMap);
     }
 }
