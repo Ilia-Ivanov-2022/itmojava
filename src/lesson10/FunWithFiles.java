@@ -49,11 +49,13 @@ public class FunWithFiles {
     // Exercise 3.
     public void mergeTwoFiles(File file1, File file2){
 
-        try (BufferedReader reader1 = new BufferedReader(new FileReader(file1))) {
-            try (BufferedReader reader2 = new BufferedReader(new FileReader(file2))) {
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter("fileStorage/output3.txt"))) {
+        try (BufferedReader reader1 = new BufferedReader(new FileReader(file1));
+             BufferedReader reader2 = new BufferedReader(new FileReader(file2));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("fileStorage/output3.txt"))){
+
                     // Вариант с OutputStream.
                     //OutputStream os = Files.newOutputStream(Paths.get("fileStorage/output3.txt")
+
                     String input1;
                     String input2;
                     StringBuilder builder = new StringBuilder();
@@ -72,8 +74,8 @@ public class FunWithFiles {
 //                    while ((input2 = reader2.readLine()) != null) {
 //                        os.write(input2.getBytes());
 //                    }
-                }
-            }
+
+
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }
@@ -82,8 +84,8 @@ public class FunWithFiles {
 
     // Exercise 4.
     public void replaceCharacters(File file){
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter("fileStorage/output4.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("fileStorage/output4.txt"))) {
 
                 String pattern = "[^а-яА-Яa-zA-Z0-9]";
                 String str;
@@ -92,7 +94,6 @@ public class FunWithFiles {
                     writer.write(str.replaceAll(pattern, "\\$"));
                 }
 
-            }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         } catch (Exception ex) {
